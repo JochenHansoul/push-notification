@@ -94,7 +94,6 @@ app.post("/subscribe", function (req, res) {
     res.status(201).json({ message: "success" });
 });
 
-
 /*****************************/
 /* running express server ****/
 /*****************************/
@@ -104,7 +103,6 @@ app.listen(port, () => console.log("Server started on port " + port));
 
 // sends a notification to the client after 8 seconds
 // this function only works after the user has subscribed of course
-setTimeout(function() {
+/*setTimeout(function() {
     sendNotification(subscription);
-}, 4000);
-
+}, 4000);*/
