@@ -29,8 +29,10 @@ npm install
 # configuration
 ###############
 
-(The app is configurated at the start and public and private keys have already
-been added.)
+The app is partially configurated at the start and public and private keys
+have already been added. After a client side subscription is created
+(when the page is run for the first time) a subscription is created and needs
+to be hard coded in the back-end (app.js).
 
 All static files (in dir public) need to be added to "app.use()" in app.js,
 otherwise the following error occures (on client side):
@@ -96,5 +98,9 @@ https://www.youtube.com/watch?v=HlYFW2zaYQM
 https://www.youtube.com/watch?v=2zHqTjyfIY8
 
 # other
+## Codelab: Build a push notification server
+https://web.dev/push-notifications-server-codelab/
 ## A beginner’s guide to Service Workers
 https://medium.com/samsung-internet-dev/a-beginners-guide-to-service-workers-f76abf1960f6
+## Using VAPID with WebPush
+https://blog.mozilla.org/services/2016/04/04/using-vapid-with-webpush/
