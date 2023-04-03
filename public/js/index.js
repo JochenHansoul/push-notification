@@ -7,14 +7,6 @@ const sendSubscription = async function () {
         const register = await navigator.serviceWorker
             .register("./service-worker.js", { scope: "/" });
 
-        if (register.installing) {
-            console.log("installing serviceworker");
-        } else if (register.active) {
-            console.log("serviceworker is active");
-        } else if (register.waiting) {
-            console.log("serviceworker is waiting");
-        }
-
         // register push
         const subscription = await register.pushManager.subscribe({
             userVisibleOnly: true,
@@ -27,7 +19,7 @@ const sendSubscription = async function () {
             body: JSON.stringify(subscription),
             headers: {
                 "Content-Type": "application/json"
-            },
+            }
         });
     } else {
         console.log("Push Manager is not supporter");
