@@ -9,8 +9,7 @@ const bodyParser = require("body-parser");
 const port = 5000;
 const app = express();
 
-// Notification content
-// Note: the title works but the body is still the same as the service-worker
+// notificatio objects contain the data for the notifications
 const notificationObject = {
     title: "Hello, Notifications!",
     options: {
