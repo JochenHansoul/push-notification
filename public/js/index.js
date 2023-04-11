@@ -6,7 +6,7 @@ const publicVapidKey = "BEnOCKUAbcQFBfs3YmWr7HtJBPCGlkWYMjlSZVxI83UliaB8PqEuF6Uh
 
 const subscribeButton = document.getElementById("subscribe");
 const unsubscribeButton = document.getElementById("unsubscribe");
-const outputElement = document.querySelector("output[name=result]");
+const outputElement = document.querySelector("p[name=result]");
 
 /*******************/
 /* functions *******/
@@ -36,6 +36,8 @@ const sendSubscription = async function () {
     // checking for service worker
     if ("serviceWorker" in navigator) {
         const subscription = await getSubscription();
+        // uncomment to get the subscription
+        //console.log("subscription: ", subscription);
 
         // send push
         const result = await fetch("/subscribe", {
