@@ -102,6 +102,6 @@ app.listen(port, () => console.log("Server started on port " + port));
 
 // sends a notification to the client after 8 seconds
 // this function only works after the user has subscribed of course
-setTimeout(function() {
+/*setTimeout(function() {
     sendNotification(subscription);
-}, 10000);
+}, 10000);*/
