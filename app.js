@@ -34,14 +34,13 @@ const vapidKeys = {
 
 // hard coded client subscription (change when setting up a new subscription)
 const subscription = {
-  endpoint: 'https://updates.push.services.mozilla.com/wpush/v2/gAAAAABkKv5ukBW6pSloFCiviDOzqEWRUNi0vtf2cVH2MR8Wuyl-6jpwQicaAQTnfGGrh46jiejPBQfnBOmaBcaUtbXuQsHbI8hBSqemyCASdD2AIPCEZxjLsTnOFmSKBI8eduqGUlcAdLjxFHLxUyTuUpxYfp-jXo7rMkOzirkWQ4CmqCLQ4mo',
+  endpoint: 'https://updates.push.services.mozilla.com/wpush/v2/gAAAAABkNTf5I-kruxoD6WUQ8WPr1U4VK5eoAx9qfuitfrYSQqvf75IS9t5mS30dSfd7fPMEPykeJ_jr4zntvoaMduuLLfQUY5kJY4Kfo7PaxP8Kbp2ArNMs6i30atnRRO1W_LG0flFNi2fHiBeaqe-eORRRv1krlcC8n1JPyXrU-SbG0kMjKK0',
   expirationTime: null,
   keys: {
-    auth: 'R7wmJlOHe2JlSrwVNiCBBg',
-    p256dh: 'BJLc9Uqa0_ptNsONlIHTOavdhEsRRb0CMr-mzPBnU2A3lFvyH2yJSnzcF50VhGriYtGkwmBXWj62UfDufRq5gPw'
+    auth: 'q0ixnS64D2lNuycfV76mTg',
+    p256dh: 'BAV_8q17XYma4bd4ECxaVTgFTKzdk0nUKTp7ryxXhgqLis-z7yroag1uHRUNIWpYg7OqKNnTo7UJNdhZ3oetGSU'
   }
 };
-
 
 /*****************************/
 /* functions *****************/
@@ -76,6 +75,7 @@ webpush.setVapidDetails(
 /*****************************/
 
 app.use(express.static(__dirname + "/public")); // serve static assets in dir "public"
+app.use(express.static(__dirname + "/public/css")); // serve static assets in dir "public/css"
 app.use(express.static(__dirname + "/public/js")); // serve static assets in dir "public/js"
 app.use(bodyParser.json()); // extracts the entire body portion of an incoming request stream and exposes it on req.body.
 
@@ -102,6 +102,6 @@ app.listen(port, () => console.log("Server started on port " + port));
 
 // sends a notification to the client after 8 seconds
 // this function only works after the user has subscribed of course
-/*setTimeout(function() {
+setTimeout(function() {
     sendNotification(subscription);
-}, 4000);*/
+}, 10000);
